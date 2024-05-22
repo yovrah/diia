@@ -579,6 +579,11 @@ function changeImg() {
         }
 
     </script>
+    <script> function preventDefaultAndChangeImg(event) {
+  event.preventDefault(); // Prevent default click behavior
+  changeImg();
+}
+    </script>
     <script>
 function changeImg() {
   const imageElement = document.querySelector('.image');

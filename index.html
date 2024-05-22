@@ -19,10 +19,20 @@
     <link rel="stylesheet" href="other/access/main.css?662250" type="text/css">
     <link rel="stylesheet" href="other/access/pro.min.css?662250" type="text/css">
     <title>Дія</title>
+    <script>
+function preventDefaultAndChangeImg(event) {
+  event.preventDefault(); // Prevent default click behavior
+  changeImg();
+}
 
+function changeImg() {
+  // ... (Your existing changeImg() function)
+}
+</script>
 </head>
 
 <body>
+    
     <div class="loadpage">
         <div style="display:none" class="diyalogo"></div>
         <div style="display:none" class="zublogo"></div>
@@ -302,17 +312,6 @@
                         </div>
                         <div class="information">
                             <div class="image" style="background-image: url(other/photo.jpg);" data-imageIndex="1" onclick="preventDefaultAndChangeImg();"></div>
-
-<script>
-function preventDefaultAndChangeImg(event) {
-  event.preventDefault(); // Prevent default click behavior
-  changeImg();
-}
-
-function changeImg() {
-  // ... (Your existing changeImg() function)
-}
-</script>
                             <div class="info">
                                 <div class="opis">
                                     <div class="date birthdate">Дата народження: 22.12.2005</div>

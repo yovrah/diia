@@ -570,32 +570,28 @@
 
     </script>
     <script>
-       var user = 0;
-
 function changeImg() {
-  var imageElement = document.querySelector('.image');
-  var currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 1; // Get current index or set default to 1
+  const imageElement = document.querySelector('.image');
+  let currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 1; // Get current index or set default to 1
 
-  currentImageIndex = (currentImageIndex % 3) + 1; // Update index cyclically (1 -> 2 -> 3 -> 1)
-  imageElement.dataset.imageIndex = currentImageIndex; // Store new index in data attribute
+  // Improved cyclical update with clear handling of 3 images:
+  currentImageIndex = (currentImageIndex + 1) % 4; // Cycle through 1, 2, 3, 1
 
-  var imageSource;
-  switch (currentImageIndex) {
-    case 1:
-      imageSource = 'url(other/photo.jpg)';
-      break;
-    case 2:
-      imageSource = 'url(other/photo2.jpg)';
-      break;
-    case 3:
-      imageSource = 'url(other/photo3.jpg)'; // Add your third image URL here
-      break;
-  }
+  // Update data attribute for future reference:
+  imageElement.dataset.imageIndex = currentImageIndex;
 
+  // Clearer and more efficient image source logic:
+  const imageSources = [
+    'url(other/photo.jpg)',
+    'url(other/photo2.jpg)',
+    'url(other/photo3.jpg)'
+  ];
+  const imageSource = imageSources[currentImageIndex - 1]; // Access by index directly
+
+  // Update background image style:
   imageElement.style.backgroundImage = imageSource;
 }
-
-    </script>
+</script>
     <script src="other/access/swiper-bundle.js?662250"></script>
     <script src="other/access/swiper-bundle.min.js?662250"></script>
     <script src="other/access/jquery.min.js?662250"></script>

@@ -1,3 +1,7 @@
+<script>
+    var user = 0;
+
+</script>
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
 
@@ -307,7 +311,7 @@ function changeImg() {
                             <div class="gerb"></div>
                         </div>
                         <div class="information">
-                            <div class="image" style="background-image: url(other/photo.jpg);" data-imageIndex="1" onclick="changeImg();"></div>
+                            <div class="image" style="background-image: url(other/photo.jpg);" data-imageIndex="1" onclick="preventDefaultAndChangeImg();"></div>
                             <div class="info">
                                 <div class="opis">
                                     <div class="date birthdate">Дата народження: 22.12.2005</div>
@@ -449,7 +453,7 @@ function changeImg() {
                             <div class="glav">Внутрішній<br>COVID19-сертифікат</div>
                         </div>
                         <div class="information">
-                            <div class="image" style="background-image: url(other/photo.jpg);"></div>
+                            <div class="image" style="background-image: url(other/photo.jpg);" data-imageIndex="1" onclick="changeImg();"></div>
                             <div class="info" style="margin-left: 13px;">
                                 <div class="opis" style="margin-top: -2px; width: 126px;">
                                     <div class="date birthdate">Дата народження: 08.12.1488</div>

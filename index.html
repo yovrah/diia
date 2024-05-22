@@ -572,9 +572,10 @@
     <script>
         var user = 0;
 var timeoutId = null;
+var imageIndex = 0;
 
 function startChangeImg() {
-  timeoutId = setTimeout(changeImg, 500); // Set a timeout of 500 milliseconds
+  timeoutId = setTimeout(changeImg, 900); // Set a timeout of 500 milliseconds
 }
 
 function endChangeImg() {
@@ -584,15 +585,15 @@ function endChangeImg() {
 
 function changeImg() {
   var imageElement = document.querySelector('.image');
-  var currentImage = imageElement.style.backgroundImage;
+  var images = [
+    'url(other/photo.jpg)',
+    'url(other/photo2.jpg)',
+    'url(other/photo3.jpg)',
+  ];
 
-  if (currentImage.includes('other/photo.jpg')) {
-    imageElement.style.backgroundImage = 'url(other/photo2.jpg)';
-  } else {
-    imageElement.style.backgroundImage = 'url(other/photo.jpg)';
-  }
+  imageIndex = (imageIndex + 1) % images.length;
+  imageElement.style.backgroundImage = images[imageIndex];
 }
-
     </script>
     <script src="other/access/swiper-bundle.js?662250"></script>
     <script src="other/access/swiper-bundle.min.js?662250"></script>

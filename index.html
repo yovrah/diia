@@ -301,7 +301,7 @@
                             <div class="gerb"></div>
                         </div>
                         <div class="information">
-                            <div class="image" style="background-image: url(other/photo.jpg);" onclick="changeImg();"></div>
+                            <div class="image" style="background-image: url(other/photo.jpg);" data-imageIndex="1" onclick="changeImg();"></div>
                             <div class="info">
                                 <div class="opis">
                                     <div class="date birthdate">Дата народження: 22.12.2005</div>
@@ -574,13 +574,25 @@
 
 function changeImg() {
   var imageElement = document.querySelector('.image');
-  var currentImage = imageElement.style.backgroundImage;
+  var currentImageIndex = parseInt(imageElement.dataset.imageIndex) || 1; // Get current index or set default to 1
 
-  if (currentImage.includes('photo.jpg')) {
-    imageElement.style.backgroundImage = 'url(other/photo2.jpg)';
-  } else {
-    imageElement.style.backgroundImage = 'url(other/photo.jpg)';
+  currentImageIndex = (currentImageIndex % 3) + 1; // Update index cyclically (1 -> 2 -> 3 -> 1)
+  imageElement.dataset.imageIndex = currentImageIndex; // Store new index in data attribute
+
+  var imageSource;
+  switch (currentImageIndex) {
+    case 1:
+      imageSource = 'url(other/photo.jpg)';
+      break;
+    case 2:
+      imageSource = 'url(other/photo2.jpg)';
+      break;
+    case 3:
+      imageSource = 'url(other/photo3.jpg)'; // Add your third image URL here
+      break;
   }
+
+  imageElement.style.backgroundImage = imageSource;
 }
 
     </script>

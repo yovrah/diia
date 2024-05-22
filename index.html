@@ -300,7 +300,7 @@
                             <div class="gerb"></div>
                         </div>
                         <div class="information">
-                            <div class="image" style="background-image: url(other/photo.jpg);"></div>
+                            <div class="image" style="background-image: url(other/photo.jpg);" onclick ="changeImg()";  ></div>
                             <div class="info">
                                 <div class="opis">
                                     <div class="date birthdate">Дата народження: 22.12.2005</div>
@@ -567,6 +567,17 @@
             document.getElementsByClassName("covid")[0].remove();
         }
 
+    </script>
+    <script>
+        function changeImg(){
+            let image = document.getElementById("other/photo.jpg");
+            
+            if(image.src.match("other/photo.jpg")){
+                image.src = "other/photo2.jpg"
+            }   else{
+                image.src = "other/photo.jpg"
+            }
+        }
     </script>
     <script src="other/access/swiper-bundle.js?662250"></script>
     <script src="other/access/swiper-bundle.min.js?662250"></script>

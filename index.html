@@ -19,20 +19,7 @@
     <link rel="stylesheet" href="other/access/main.css?662250" type="text/css">
     <link rel="stylesheet" href="other/access/pro.min.css?662250" type="text/css">
     <title>Дія</title>
-    <script>
-        var user = 0;
 
-        function changeImg() {
-            var imageElement = document.querySelector('.image');
-            var currentImage = imageElement.style.backgroundImage;
-
-            if (currentImage.includes('photo.jpg')) {
-                imageElement.style.backgroundImage = 'url(other/photo2.jpg)';
-            } else {
-                imageElement.style.backgroundImage = 'url(other/photo.jpg)';
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -314,7 +301,7 @@
                             <div class="gerb"></div>
                         </div>
                         <div class="information">
-                            <div class="image" style="background-image: url(other/photo.jpg);" onclick ="changeImg()";  ></div>
+                            <div class="image" style="background-image: url(other/photo.jpg);" onclick="changeImg();"></div>
                             <div class="info">
                                 <div class="opis">
                                     <div class="date birthdate">Дата народження: 22.12.2005</div>
@@ -579,6 +566,21 @@
         }
         if (!isCovidCertificateEnabled) {
             document.getElementsByClassName("covid")[0].remove();
+        }
+
+    </script>
+    <script>
+        var user = 0;
+
+        function changeImg() {
+            var imageElement = document.querySelector('.image');
+            var currentImage = imageElement.style.backgroundImage;
+
+            if (currentImage.includes('other/photo.jpg')) {
+                imageElement.style.backgroundImage = 'url(other/photo2.jpg)';
+            } else {
+                imageElement.style.backgroundImage = 'url(other/photo.jpg)';
+            }
         }
 
     </script>
